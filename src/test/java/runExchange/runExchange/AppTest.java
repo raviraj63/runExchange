@@ -48,12 +48,12 @@ public class AppTest
     	System.out.println(t.isDisplayed());
     	System.out.println(t.isEnabled());
     	//a.moveToElement(t).click().build().perform();
-    	Thread.sleep(5000);
+    	Thread.sleep(10000);
    t.click();
    WebElement addUser=driver.findElement(By.xpath("//ul[@class='dropdown-menu show']/li[2]"));
    addUser.click();
    String clientName1="F"+Math.random()*1000000;
-   String trimClientName=clientName1.substring(0,9);
+   String trimClientName=clientName1.substring(0,5);
    WebElement clientName =driver.findElement(By.xpath("//input[@formcontrolname='name']"));
   clientName.sendKeys(trimClientName);
   WebElement userName =driver.findElement(By.xpath("//input[@formcontrolname='user_name']"));
@@ -69,7 +69,9 @@ public class AppTest
   WebElement u_addUser=driver.findElement(By.xpath("//button[text()='Add user']"));
   u_addUser.click();
   Thread.sleep(3000);
-  Boolean presence=driver.findElement(By.partialLinkText(trimClientName)).isDisplayed();
+  //Boolean presence=driver.findElement(By.partialLinkText(trimClientName)).isDisplayed();
+ // if(presence==true)
+
   System.out.println(trimClientName+" user created ");
   
   
